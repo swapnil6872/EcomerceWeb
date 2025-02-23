@@ -7,7 +7,6 @@ const ownersRouter = require('./routes/ownersRouter');
 const productsRouter=require('./routes/productRouter');
 const usersRouter = require('./routes/usersRouter');
 const index=require('./routes/index')
-
 const expressSession=require('express-session');
 const flash = require('connect-flash');
 

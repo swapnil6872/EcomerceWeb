@@ -24,5 +24,8 @@ router.get('/', (req, res) => {
     res.send('hey');
 })
 
+router.get('/admin',(req,res)=>{
+    res.render('createproducts',{ success: req.flash("success") || "" })  
+})
 
 module.exports = router;
