@@ -1,0 +1,52 @@
+<!-- Header -->
+<%- include('./partials/header') %>
+
+<!-- Main content -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md transform transition duration-500 hover:scale-105">
+        
+        <!-- Brand Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="/images/logo.png" alt="Brand Logo" class="h-14">
+        </div>
+
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Welcome Back</h2>
+        <p class="text-center text-gray-500 mb-6">Login to continue</p>
+
+        <!-- Login Form -->
+        <form action="/users/login" method="POST" class="space-y-4">
+            
+            <!-- Email Input -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-400 shadow-sm" required>
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-400 shadow-sm" required>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="flex justify-between items-center text-sm text-gray-600">
+                <div>
+                    <input type="checkbox" id="remember" name="remember" class="mr-2">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <a href="/forgot-password" class="text-gray-700 hover:underline">Forgot Password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-gray-800 text-white p-3 rounded-lg text-lg font-semibold hover:bg-gray-900 transition duration-300 shadow-md">Log In</button>
+        </form>
+
+        <!-- Redirect to Sign Up -->
+        <div class="text-center mt-6">
+            <p class="text-sm text-gray-600">Don't have an account? <a href="/signup" class="text-gray-800 hover:underline font-medium">Sign up</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<%- include('./partials/footer') %>

@@ -1,0 +1,49 @@
+<!-- Header -->
+<%- include('./partials/header') %>
+
+<!-- Main content -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md transform transition duration-500 hover:scale-105">
+        
+        <!-- Brand Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="/images/logo.png" alt="Brand Logo" class="h-14">
+        </div>
+
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
+        <p class="text-center text-gray-500 mb-6">Join us today!</p>
+
+        <!-- Signup Form -->
+        <form action="/users/register" method="POST" class="space-y-4">
+            
+            <!-- Full Name Input -->
+            <div>
+                <label for="fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="fullname" name="fullname" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-400 shadow-sm" required minlength="3">
+            </div>
+
+            <!-- Email Input -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-400 shadow-sm" required>
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-400 shadow-sm" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-gray-800 text-white p-3 rounded-lg text-lg font-semibold hover:bg-gray-900 transition duration-300 shadow-md">Sign Up</button>
+        </form>
+
+        <!-- Redirect to Login -->
+        <div class="text-center mt-6">
+            <p class="text-sm text-gray-600">Already have an account? <a href="/login" class="text-gray-800 hover:underline font-medium">Log in</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<%- include('./partials/footer') %>

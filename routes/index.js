@@ -6,7 +6,11 @@ const userModel = require('../models/user-model');
 
 router.get('/',(req,res)=>{
     let error =req.flash('error')
-    res.render('index',{error,loggedin:false});
+    res.render('login',{error,loggedin:false});
+})
+router.get('/signup',(req,res)=>{
+    let error =req.flash('error')
+    res.render('signup',{error,loggedin:false});
 })
 router.get('/shop',isLoggedIn,async (req,res)=>{
     let products = await productModel.find();
@@ -16,7 +20,7 @@ router.get('/shop',isLoggedIn,async (req,res)=>{
 
 router.get('/cart',isLoggedIn,async (req,res)=>{
     let user = userModel.findOne({email:req.user.email}).populate('cart');
-    
+    console.log(user);
    const bill =(Number(user.cart[0].price)+20)-Number(user.cart[0].discount)
 
     res.render('cart',{user,bill});

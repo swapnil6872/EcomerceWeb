@@ -23,7 +23,7 @@ module.exports.registerUser = async (req, res) => {
                     let token = generateToken(user);
                                 
                     res.cookie("token",token);
-                    res.send("user created sucessfully");
+                    res.redirect("/");
                 }
             });
         });
@@ -41,7 +41,7 @@ module.exports.loginUser = async (req,res)=>{
         if(result){
             let token = generateToken(user);
             res.cookie('token',token);
-            res.send('you are logged in')
+            res.redirect('/shop');
         }else{
             res.send('Email or Password incorrect');
         }
